@@ -1,5 +1,5 @@
 {
-    "name": "homebridge-gpio-valve",
+    "name": "homebridge-gpio-valve-2",
     "version": "2.0.1",
     "main": "index.js",
     "repository": "https://github.com/jacobgelman/homebridge-gpio-valve.git",
