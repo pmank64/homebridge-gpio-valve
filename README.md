@@ -17,7 +17,7 @@ sudo npm install homebridge-gpio-valve -g --unsafe-perm
 ## Configuration
 | Name | Description | Valid Values | Default |
 |---|---|---|---|
-| `pin` | The pin to use for opening and closing the valve | The GPIO pin number of any valid pin. The selected pin should not be written to by any external applications | None |
+| `pin` | An array of 2 pins to use for opening and closing the valve and a second component like an LED indicator. | The GPIO pin number of any valid pins. The selected pins should not be written to by any external applications | None |
 | `openOnHigh` | Whether or not the valve opens when the pin is high | `true` or `false` | `true`|
 | `defaultDuration` | The duration to open the value for when triggered. The user can change this value in the Home app | A duration in seconds no greater than 3600 (one hour) | `600` seconds (ten minutes) |
 | `type` | The type of attached valve. Affects the icon displayed for the accessory in the Home app. | As of iOS 11.3: `"GENERIC_VALVE"`, `"IRRIGATION"`, `"SHOWER_HEAD"`, or `"WATER_FAUCET"` | `"GENERIC_VALVE"` |
@@ -35,7 +35,7 @@ sudo npm install homebridge-gpio-valve -g --unsafe-perm
  {
     "accessory": "GPIOValve",
     "name": "Grass",
-    "pin": 11,
+    "pin": [17, 27],
     "openOnHigh": false,
     "isTimed": true,
     "defaultDuration": 1200,

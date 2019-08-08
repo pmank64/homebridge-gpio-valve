@@ -4,7 +4,7 @@ class GPIOValve {
 
     constructor(pin, openOnHigh = true) {
 
-        if (!pin) { throw new Error('A valve control pin must be specified') }
+        if (!pin) { throw new Error('A array of 2 valve control pin must be specified') }
 
         this._openLevel   = +openOnHigh
         this._closedLevel = +!openOnHigh
