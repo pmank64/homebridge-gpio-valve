@@ -9,7 +9,9 @@ class GPIOValve {
         this._openLevel   = +openOnHigh
         this._closedLevel = +!openOnHigh
 
-        this._valve = new Gpio(pin, 'out')
+        this._valve = new Gpio(pin[0], 'out')
+        this._valve2 = new Gpio(pin[1], 'out')
+
         this._writeClosed()
 
         process.on('SIGINT', () => {
@@ -56,10 +58,12 @@ class GPIOValve {
 
     _writeOpen() {
         this._valve.writeSync(this._openLevel)
+        this._valve2.writeSync(this._openLevel)
     }
 
     _writeClosed() {
         this._valve.writeSync(this._closedLevel)
+        this._valve2.writeSync(this._closedLevel)
     }
 
 }
